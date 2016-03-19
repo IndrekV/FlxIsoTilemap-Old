@@ -242,7 +242,7 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 		_debugTileSolid = null;
 		#end
 		#else
-		//OK _matrix = null;
+		_matrix = null;
 		#end
 		
 		frames = null;
@@ -1439,7 +1439,7 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 					}
 					#end
 				#else
-					//OK _matrix.identity();
+					_matrix.identity();
 					
 					if (_tile.frame.angle != FlxFrameAngle.ANGLE_0)
 					{
@@ -1456,8 +1456,8 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 						var translateX = _isoObject.sprite.flipX ? _isoObject.sprite.width : 0;
 						var translateY = _isoObject.sprite.flipY ? _isoObject.sprite.height : 0;
 						
-						//OK _matrix.scale(hackScaleX * flipX, hackScaleY * flipY);
-						//OK _matrix.translate(translateX, translateY);
+						_matrix.scale(hackScaleX * flipX, hackScaleY * flipY);
+						_matrix.translate(translateX, translateY);
 						
 						_isoObject.sprite.draw();
 						
@@ -1471,8 +1471,8 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 						//Sprite
 						//OK charDrawItem.setDrawData(FlxPoint.weak(charX, charY), _isoObject.sprite.frame.tileID, _matrix, isColored, color, alpha);
 					} else {
-					//OK 	_matrix.scale(hackScaleX, hackScaleY);
-					//OK 	drawItem.setDrawData(FlxPoint.weak(drawPt.x * hackScaleX, drawPt.y * hackScaleY), _isoObject.index, _matrix, isColored, color, alpha);
+					_matrix.scale(hackScaleX, hackScaleY);
+					//OK drawItem.setDrawData(FlxPoint.weak(drawPt.x * hackScaleX, drawPt.y * hackScaleY), _isoObject.index, _matrix, isColored, color, alpha);
 					}
 				#end
 			}
