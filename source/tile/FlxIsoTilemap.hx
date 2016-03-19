@@ -1472,9 +1472,13 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 							
 						//Sprite
 						//OK charDrawItem.setDrawData(FlxPoint.weak(charX, charY), _isoObject.sprite.frame.tileID, _matrix, isColored, color, alpha);
+						var transform = new ColorTransform(1, 1, 1, 1, color.red, color.green, color.blue, color.alpha);
+						charDrawItem.addQuad(_isoObject.sprite.frame, _matrix, transform);
 					} else {
-					_matrix.scale(hackScaleX, hackScaleY);
+						_matrix.scale(hackScaleX, hackScaleY);
 					//OK drawItem.setDrawData(FlxPoint.weak(drawPt.x * hackScaleX, drawPt.y * hackScaleY), _isoObject.index, _matrix, isColored, color, alpha);
+						var transform = new ColorTransform(1, 1, 1, 1, color.red, color.green, color.blue, color.alpha);
+						drawItem.addQuad(_isoObject.sprite.frame, _matrix, transform);
 					}
 				#end
 			}
