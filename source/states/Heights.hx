@@ -142,7 +142,7 @@ class Heights extends FlxState
 						 
 		//Testing Tiled Json
 		map = new FlxIsoTilemap(new Rectangle(0, 0, FlxG.stage.stageWidth, FlxG.stage.stageHeight));
-		map.loadFromTiledJson(Assets.getText('images/iso_height.json'), [0, 1], height_map);
+		map.loadFromTiledJson(Assets.getText('assets/images/iso_height.json'), [0, 1], height_map);
 		
 		aStar = new Astar(IsoUtils.convertToInt(map.getLayerAt(1).data), false, false);
 		aStar.walkableTiles = [ -1, 0, 1, 16, 17];
