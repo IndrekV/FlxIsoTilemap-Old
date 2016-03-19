@@ -16,7 +16,7 @@ class Player extends FlxIsoSprite
 {
 	public var isWalking:Bool;
 	
-	var path:FlxPath;
+	//var path:FlxPath;
 	var pathPoints:Array<FlxPoint>;
 	var pathSpeed:Float;
 	var pathPos:Int;
@@ -153,7 +153,7 @@ class Player extends FlxIsoSprite
 			
 		setDirection();
 		
-		path.start(this, [pathPoints[pathPos]], pathSpeed, FlxPath.FORWARD, false);
+		//OK path.start(this, [pathPoints[pathPos]], pathSpeed, FlxPath.FORWARD, false);
 		path.onComplete = checkPath;
 		isWalking = true;
 	}
@@ -172,7 +172,7 @@ class Player extends FlxIsoSprite
 			setDirection();
 			
 			path.reset();
-			path.start(this, [pathPoints[pathPos]], pathSpeed, FlxPath.FORWARD, false);
+			//OK path.start(this, [pathPoints[pathPos]], pathSpeed, FlxPath.FORWARD, false);
 			path.onComplete = checkPath;
 		}
 	}

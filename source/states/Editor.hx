@@ -149,7 +149,7 @@ class Editor extends FlxUIState
 		}
 		mapCursor.animation.play("0");
 		
-		mapCursor.ignoreDrawDebug = true;
+		//OK mapCursor.ignoreDrawDebug = true;
 		add(mapCursor);
 	}
 	

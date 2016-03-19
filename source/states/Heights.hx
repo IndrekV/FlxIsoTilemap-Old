@@ -96,7 +96,7 @@ class Heights extends FlxState
 		cursor.loadGraphic("images/iso_64_32_b.png", true, 64, 96);
 		cursor.animation.add("idle", [18], 12);
 		cursor.animation.play("idle");
-		cursor.ignoreDrawDebug = true;
+		//OK cursor.ignoreDrawDebug = true;
 		add(cursor);
 	}
 	

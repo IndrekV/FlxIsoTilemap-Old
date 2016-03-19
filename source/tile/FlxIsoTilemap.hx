@@ -242,7 +242,7 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 		_debugTileSolid = null;
 		#end
 		#else
-		_matrix = null;
+		//OK _matrix = null;
 		#end
 		
 		frames = null;
@@ -1439,14 +1439,14 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 					}
 					#end
 				#else
-					_matrix.identity();
+					//OK _matrix.identity();
 					
 					if (_tile.frame.angle != FlxFrameAngle.ANGLE_0)
 					{
-						_tile.frame.prepareFrameMatrix(_matrix);
+						//OK _tile.frame.prepareFrameMatrix(_matrix);
 					}
 						
-					drawItem = Camera.getDrawTilesItem(graphic, isColored, _blendInt);
+					//OK drawItem = Camera.getDrawTilesItem(graphic, isColored, _blendInt);
 					
 					//Checks for sprites over the tile
 					if (_isoObject.sprite != null) {
@@ -1456,12 +1456,12 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 						var translateX = _isoObject.sprite.flipX ? _isoObject.sprite.width : 0;
 						var translateY = _isoObject.sprite.flipY ? _isoObject.sprite.height : 0;
 						
-						_matrix.scale(hackScaleX * flipX, hackScaleY * flipY);
-						_matrix.translate(translateX, translateY);
+						//OK _matrix.scale(hackScaleX * flipX, hackScaleY * flipY);
+						//OK _matrix.translate(translateX, translateY);
 						
 						_isoObject.sprite.draw();
 						
-						var charDrawItem = Camera.getDrawTilesItem(_isoObject.sprite.frame.parent, isColored, _blendInt);
+						//OK var charDrawItem = Camera.getDrawTilesItem(_isoObject.sprite.frame.parent, isColored, _blendInt);
 						
 						//Sprite position
 						var charX = (_isoObject.sprite.x - _point.x) * hackScaleX;
@@ -1469,10 +1469,10 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 						var charY = ((_isoObject.sprite.y - (_scaledTileDepth / 2) - _point.y) * hackScaleY) - (_isoObject.heightLevel * heightOffset);
 							
 						//Sprite
-						charDrawItem.setDrawData(FlxPoint.weak(charX, charY), _isoObject.sprite.frame.tileID, _matrix, isColored, color, alpha);
+						//OK charDrawItem.setDrawData(FlxPoint.weak(charX, charY), _isoObject.sprite.frame.tileID, _matrix, isColored, color, alpha);
 					} else {
-						_matrix.scale(hackScaleX, hackScaleY);
-						drawItem.setDrawData(FlxPoint.weak(drawPt.x * hackScaleX, drawPt.y * hackScaleY), _isoObject.index, _matrix, isColored, color, alpha);
+					//OK 	_matrix.scale(hackScaleX, hackScaleY);
+					//OK 	drawItem.setDrawData(FlxPoint.weak(drawPt.x * hackScaleX, drawPt.y * hackScaleY), _isoObject.index, _matrix, isColored, color, alpha);
 					}
 				#end
 			}
@@ -1711,18 +1711,18 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 			}
 		}
 	}
-	
+	/*OK
 	override public function findPath(Start:FlxPoint, End:FlxPoint, Simplify:Bool = true, RaySimplify:Bool = false, WideDiagonal:Bool = true):Array<FlxPoint>
 	{
 		trace('findPath method does not work with FlxIsoTilemap. Use external class tile.AStar instead');
 		return null;
 	}
-	
+
 	override public function computePathDistance(StartIndex:Int, EndIndex:Int, WideDiagonal:Bool, StopOnEnd:Bool = true):Array<Int>
 	{
 		trace('computePathDistance method does not work with FlxIsoTilemap. Use external class tile.AStar instead');
 		return null;
-	}
+	}*/
 }
 
 typedef MapLayer = {

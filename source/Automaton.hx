@@ -13,7 +13,7 @@ class Automaton extends FlxIsoSprite
 	var isWalking:Bool;
 	var destination:FlxPoint;
 	var lastFacing:Int;
-	var path:FlxPath;
+	//OK var path:FlxPath;
 	var movementRanges:Array<Int> = [30, 60, 120, 150, 180];
 	
 	public function new(X:Float = 0, Y:Float = 0, ?SimpleGraphic:Dynamic) 
@@ -83,7 +83,7 @@ class Automaton extends FlxIsoSprite
 		var range:Int = FlxG.random.getObject(movementRanges);
 		destination.x = Math.floor(this.x) + range * dirX;
 		destination.y = Math.floor(this.y) + (range / 2) * dirY;
-		path.start(this, [destination], 80, FlxPath.FORWARD);
+		//OK path.start(this, [destination], 80, FlxPath.FORWARD);
 		path.onComplete = resetPath;
 		
 		isWalking = true;
