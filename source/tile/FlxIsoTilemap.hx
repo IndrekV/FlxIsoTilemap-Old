@@ -1443,7 +1443,7 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 					
 					if (_tile.frame.angle != FlxFrameAngle.ANGLE_0)
 					{
-						//OK _tile.frame.prepareFrameMatrix(_matrix);
+						_tile.frame.prepareMatrix(_matrix);
 					}
 						
 					//OK drawItem = Camera.getDrawTilesItem(graphic, isColored, _blendInt);
