@@ -1447,6 +1447,7 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 					}
 						
 					//OK drawItem = Camera.getDrawTilesItem(graphic, isColored, _blendInt);
+					drawItem = Camera.startQuadBatch(graphic, isColored, false, blend);
 					
 					//Checks for sprites over the tile
 					if (_isoObject.sprite != null) {
@@ -1462,6 +1463,7 @@ class FlxIsoTilemap extends FlxBaseTilemap<FlxIsoTile>
 						_isoObject.sprite.draw();
 						
 						//OK var charDrawItem = Camera.getDrawTilesItem(_isoObject.sprite.frame.parent, isColored, _blendInt);
+						var charDrawItem = Camera.startQuadBatch(_isoObject.sprite.frame.parent, isColored, false, blend);
 						
 						//Sprite position
 						var charX = (_isoObject.sprite.x - _point.x) * hackScaleX;
