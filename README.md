@@ -1,7 +1,11 @@
-FlxTilemap
+FlxIsoTilemap
 ==========
 
 Isometric tilemap implementation for HaxeFlixel.
+
+This project is based on the great work done by [Masadow](https://github.com/Masadow) and [Tiago-Ling](https://github.com/Tiago-Ling)
+
+Original project is visible at https://github.com/Masadow/FlxTilemap
 
 ### Current status / features
 
